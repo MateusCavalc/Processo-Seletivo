@@ -4,7 +4,7 @@ import requests
 URL = "https://www.gov.br/ans/pt-br/assuntos/prestadores/padrao-para-troca-de-informacao-de-saude-suplementar-2013-tiss"
 FILE_TYPE = ".pdf"
 
-def get_file_url(url):
+def get_file_url(url): # Retorna a URL da página com o arquivo .pdf desejado
     html = requests.get(url).content
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -24,7 +24,7 @@ def get_file_url(url):
 
     return desired_url
 
-def download_file(url):
+def download_file(url): # Recebe a url da página do arquivo e efetua o download
     html = requests.get(url).content
     soup = BeautifulSoup(html, 'html.parser')
 
